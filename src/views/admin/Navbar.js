@@ -16,8 +16,8 @@ function Navbar({ toggleSidebar }) {
   return (
     <div className="navbar_wrap">
       <div className="navbar_left">
-        <IconButton>
-          <MenuIcon onClick={toggleSidebar} />
+        <IconButton onClick={toggleSidebar}>
+          <MenuIcon />
         </IconButton>
       </div>
       <div className="navbar_right">

@@ -26,6 +26,13 @@ const useStyles = makeStyles((theme) => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
+  primary: {
+    fontSize: 0,
+    transition: "font-size .35s",
+  },
+  primaryOpen: {
+    transition: "font-size .35s",
+  },
 }));
 
 function Sidebar({ sidebarOpen }) {
@@ -45,11 +52,18 @@ function Sidebar({ sidebarOpen }) {
           //   className={classes.orange}
           variant="rounded"
         />
-        {sidebarOpen ? (
-          <Typography variant="h5" gutterBottom style={{ marginLeft: ".6rem" }}>
-            SG Jeweller
-          </Typography>
-        ) : null}
+
+        <Typography
+          variant="h5"
+          gutterBottom
+          style={{
+            marginLeft: ".6rem",
+            fontSize: sidebarOpen ? "inherit" : "0",
+            transition: "font-size .35s",
+          }}
+        >
+          SG Jeweller
+        </Typography>
 
         {/* {sidebarOpen ? (
           <Typography variant="h5" gutterBottom style={{ marginLeft: ".6rem" }}>
@@ -69,50 +83,40 @@ function Sidebar({ sidebarOpen }) {
           }
           className={classes.root}
         >
-          <ListItem button>
+          <ListItem button disableGutters>
             <ListItemIcon>
               <SendIcon />
             </ListItemIcon>
-            {sidebarOpen ? <ListItemText primary="Sent mail" /> : null}
+
+            <ListItemText
+              primary="Sent mail"
+              classes={
+                sidebarOpen
+                  ? { primary: classes.primaryOpen }
+                  : { primary: classes.primary }
+              }
+            />
           </ListItem>
           {/* ============ */}
-          <ListItem button>
+          <ListItem button disableGutters>
             <ListItemIcon>
               <DraftsIcon />
             </ListItemIcon>
-            {sidebarOpen ? <ListItemText primary="Drafts" /> : null}
+            <ListItemText
+              primary="Drafts"
+              classes={
+                sidebarOpen
+                  ? { primary: classes.primaryOpen }
+                  : { primary: classes.primary }
+              }
+            />
           </ListItem>
           {/* ============= */}
 
           {/* ======= */}
-          <ListItem button>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
-            {sidebarOpen ? <ListItemText primary="Link1" /> : null}
-          </ListItem>
-          {/* ========== */}
-          <ListItem button>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
-            {sidebarOpen ? <ListItemText primary="Link2" /> : null}
-          </ListItem>
-          {/* ============== */}
-          <ListItem button>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
 
-            {sidebarOpen ? <ListItemText primary="Link3" /> : null}
-          </ListItem>
-          {/* =============== */}
-          <ListItem button>
-            <ListItemIcon>
-              <DraftsIcon />
-            </ListItemIcon>
-            {sidebarOpen ? <ListItemText primary="Link4" /> : null}
-          </ListItem>
+          {/* ========== */}
+
           {/* ============= */}
         </List>
       </div>
