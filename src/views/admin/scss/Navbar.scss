@@ -6,9 +6,11 @@
   //   padding: 0 1rem 0 0;
   .navbar_left {
     flex: 0.5;
+    // height: 50px;
   }
   .navbar_right {
     flex: 0.5;
+    // max-height: 50px;
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
@@ -21,6 +23,12 @@
       cursor: pointer;
       //   margin-left: 3rem;
       //   padding: 0 12px;
+    }
+    .group-both {
+      display: flex;
+      justify-content: space-between;
+
+      align-items: center;
     }
   }
 }
