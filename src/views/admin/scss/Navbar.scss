@@ -1,0 +1,26 @@
+.navbar_wrap {
+  height: 50px;
+  background: rgb(255, 193, 170);
+  display: flex;
+  align-items: center;
+  //   padding: 0 1rem 0 0;
+  .navbar_left {
+    flex: 0.5;
+  }
+  .navbar_right {
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    // margin-left: 49rem;
+
+    .iconButtons {
+    }
+    .navbar_profile {
+      cursor: pointer;
+      //   margin-left: 3rem;
+      //   padding: 0 12px;
+    }
+  }
+}

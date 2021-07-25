@@ -1,0 +1,31 @@
+.layout_admin {
+  display: flex;
+  min-height: 100vh;
+  .layout_admin_left.closed {
+    flex: 0.04;
+    transition: flex 0.35s;
+    // background: green;
+    border-right: solid 1px blue;
+  }
+  .layout_admin_left.open {
+    flex: 0.12;
+    transition: flex 0.35s;
+    // background: green;
+    border-right: solid 1px blue;
+  }
+  .layout_admin_right {
+    flex: 0.88;
+    // width: 100%;
+    // background: yellow;
+    .navbar {
+    }
+    .content {
+    }
+  }
+  .layout_admin_right.open {
+    flex: 0.88;
+  }
+  .layout_admin_right.closed {
+    flex: 0.96;
+  }
+}
